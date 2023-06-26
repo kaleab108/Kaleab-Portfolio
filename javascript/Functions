@@ -1,0 +1,24 @@
+
+// Get a reference to the element you want to resize
+var element = document.getElementById('myElement');
+
+// Function to handle resizing
+function resizeElement() {
+  // Get the current dimensions of the viewport
+  var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+  var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+  
+  // Adjust the element's dimensions based on the viewport size
+  var width = viewportWidth * 0.8; // Resize to 80% of viewport width
+  var height = viewportHeight * 0.5; // Resize to 50% of viewport height
+  
+  // Set the new dimensions for the element
+  element.style.width = width + 'px';
+  element.style.height = height + 'px';
+}
+
+// Add event listener for the resize event
+window.addEventListener('resize', resizeElement);
+
+// Call the resize function initially to set the initial dimensions
+resizeElement();
